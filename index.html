@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Polish Notation Example</title>
+    <script src="sketch.js"></script>
+  </head>
+  <style type="text/css" media="screen">
+    body {
+      background-color: black;
+      font-family: sans-serif;
+      color: white;
+      font-size: .8rem;
+      letter-spacing: 1px;
+    }
+    label, textarea {
+      font-size: .8rem;
+      letter-spacing: 1px;
+    }
+    textarea {
+      text-align: right;
+    }
+
+    textarea, input {
+      padding: 10px;
+      line-height: 1.5;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-shadow: 1px 1px 1px #999;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .info {
+      width: 500px;
+    }
+    .styled {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 210, 210, 1);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.styled:hover {
+    background-color: rgb(111, 214, 120);
+}
+
+.styled:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+
+
+    .canvas{
+      position:absolute;
+      z-index:0;
+      top:83px;
+      left:91px;
+    }
+
+  </style>
+  <body>
+    <h2>RPN Boolean calculator</h2>
+    <div class="info">
+      Reverse polish notaton (RPN) boolean calculator. Values are pushed to the
+      stack. Operators pops the stack and push the result back on the stack.<br/>
+      <br/>
+      Example:
+      <blockquote>
+        <tt>true, false, <b>or</b>, true, <b>and</b></tt><br/>
+      </blockquote>
+      <br/>is evaluated as:
+      <blockquote>
+          <tt>(true <b>or</b> false) <b>and</b> true</tt> (equals <tt>true</tt>). <br/>
+      </blockquote>
+      <br/>
+      One benefit of RPN is that there is no need for parenthesises.
+    </div>
+    <br/>
+    <br/>   
+    <label for="stack">Stack:</label>
+    <input id="stack" name="stack" size="60"></input>
+    <br/>
+    <br/>
+    <label for="inp">Input:</label>
+    <input id = "inp" name="inp" size="60"></input>
+    <br/>
+    <br/>
+    <button id = "b-true" class="styled" type="button">true</button>
+    <button id = "b-false" class="styled" type="button">false</button>
+    <button id = "b-and" class="styled" type="button">and</button>
+    <button id = "b-or" class="styled" type="button">or</button>
+    <button id = "b-not" class="styled" type="button">not</button>
+    <button id = "b-eval" class="styled" type="button">eval</button>
+    <button id = "b-clear" class="styled" type="button">clear</button>
+  </body>
+</html>
